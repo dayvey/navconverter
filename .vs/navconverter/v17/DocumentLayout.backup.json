@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Programming\\repos\\navconverter\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{97D1B7B9-643F-448B-BE36-19951382C0D4}|navconverter\\navconverter.csproj|d:\\programming\\repos\\navconverter\\navconverter\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97D1B7B9-643F-448B-BE36-19951382C0D4}|navconverter\\navconverter.csproj|solutionrelative:navconverter\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97D1B7B9-643F-448B-BE36-19951382C0D4}|navconverter\\navconverter.csproj|d:\\programming\\repos\\navconverter\\navconverter\\models\\adohivatalitetel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97D1B7B9-643F-448B-BE36-19951382C0D4}|navconverter\\navconverter.csproj|solutionrelative:navconverter\\models\\adohivatalitetel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97D1B7B9-643F-448B-BE36-19951382C0D4}|navconverter\\navconverter.csproj|d:\\programming\\repos\\navconverter\\navconverter\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{97D1B7B9-643F-448B-BE36-19951382C0D4}|navconverter\\navconverter.csproj|solutionrelative:navconverter\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97D1B7B9-643F-448B-BE36-19951382C0D4}|navconverter\\navconverter.csproj|d:\\programming\\repos\\navconverter\\navconverter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97D1B7B9-643F-448B-BE36-19951382C0D4}|navconverter\\navconverter.csproj|solutionrelative:navconverter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97D1B7B9-643F-448B-BE36-19951382C0D4}|navconverter\\navconverter.csproj|d:\\programming\\repos\\navconverter\\navconverter\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97D1B7B9-643F-448B-BE36-19951382C0D4}|navconverter\\navconverter.csproj|solutionrelative:navconverter\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97D1B7B9-643F-448B-BE36-19951382C0D4}|navconverter\\navconverter.csproj|d:\\programming\\repos\\navconverter\\navconverter\\models\\fabertetel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97D1B7B9-643F-448B-BE36-19951382C0D4}|navconverter\\navconverter.csproj|solutionrelative:navconverter\\models\\fabertetel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FaberTetel.cs",
+              "DocumentMoniker": "D:\\Programming\\repos\\navconverter\\navconverter\\Models\\FaberTetel.cs",
+              "RelativeDocumentMoniker": "navconverter\\Models\\FaberTetel.cs",
+              "ToolTip": "D:\\Programming\\repos\\navconverter\\navconverter\\Models\\FaberTetel.cs",
+              "RelativeToolTip": "navconverter\\Models\\FaberTetel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:42:12.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdoHivataliTetel.cs",
+              "DocumentMoniker": "D:\\Programming\\repos\\navconverter\\navconverter\\Models\\AdoHivataliTetel.cs",
+              "RelativeDocumentMoniker": "navconverter\\Models\\AdoHivataliTetel.cs",
+              "ToolTip": "D:\\Programming\\repos\\navconverter\\navconverter\\Models\\AdoHivataliTetel.cs",
+              "RelativeToolTip": "navconverter\\Models\\AdoHivataliTetel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:41:56.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\Programming\\repos\\navconverter\\navconverter\\Form1.cs",
+              "RelativeDocumentMoniker": "navconverter\\Form1.cs",
+              "ToolTip": "D:\\Programming\\repos\\navconverter\\navconverter\\Form1.cs",
+              "RelativeToolTip": "navconverter\\Form1.cs",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAAAKIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:38:24.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\Programming\\repos\\navconverter\\navconverter\\Form1.cs",
+              "RelativeDocumentMoniker": "navconverter\\Form1.cs",
+              "ToolTip": "D:\\Programming\\repos\\navconverter\\navconverter\\Form1.cs [Design]",
+              "RelativeToolTip": "navconverter\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:38:14.089Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\Programming\\repos\\navconverter\\navconverter\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "navconverter\\Form1.Designer.cs",
+              "ToolTip": "D:\\Programming\\repos\\navconverter\\navconverter\\Form1.Designer.cs",
+              "RelativeToolTip": "navconverter\\Form1.Designer.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAowHYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:32:16.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Programming\\repos\\navconverter\\navconverter\\Program.cs",
+              "RelativeDocumentMoniker": "navconverter\\Program.cs",
+              "ToolTip": "D:\\Programming\\repos\\navconverter\\navconverter\\Program.cs",
+              "RelativeToolTip": "navconverter\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:31:33.392Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
