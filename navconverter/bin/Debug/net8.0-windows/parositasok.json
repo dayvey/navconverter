@@ -20,7 +20,7 @@
     "Brutto": "5094.61",
     "AfaOsszeg": "1083.11",
     "Cikkszam": "169618",
-    "FaberMegnevezes": "Faber-Castell  akvarell festő készlet - 18db",
+    "FaberMegnevezes": null,
     "DisplayText": "Aquarell blokk A4 / 10ív; 224g | 169618"
   },
   {
@@ -32,7 +32,7 @@
     "Brutto": "5229.99",
     "AfaOsszeg": "1111.89",
     "Cikkszam": "119065",
-    "FaberMegnevezes": "Faber-Castell 12 db-os grafitceruza készlet, Castell 9000 ART 8B-2H",
+    "FaberMegnevezes": null,
     "DisplayText": "Aquarell blokk A3 / 10ív; 224g | 119065"
   },
   {
@@ -67,9 +67,9 @@
     "Netto": "943.2",
     "Brutto": "1197.86",
     "AfaOsszeg": "254.66",
-    "Cikkszam": null,
-    "FaberMegnevezes": null,
-    "DisplayText": "Radírbetét, precíziós / 4db | "
+    "Cikkszam": "112112",
+    "FaberMegnevezes": "Faber-Castell Art&Graphic Pitt pasztell színes ceruza 12db",
+    "DisplayText": "Radírbetét, precíziós / 4db | 112112"
   },
   {
     "Tetel": "Művészceruza klt - Gift / 23db",
@@ -91,9 +91,9 @@
     "Netto": "7951.1",
     "Brutto": "10097.9",
     "AfaOsszeg": "2146.8",
-    "Cikkszam": null,
-    "FaberMegnevezes": null,
-    "DisplayText": "Művészceruza, Gift set / 21db | "
+    "Cikkszam": "127024",
+    "FaberMegnevezes": "Faber-Castell Creative Studio olajpasztell kréta készlet, 24db",
+    "DisplayText": "Művészceruza, Gift set / 21db | 127024"
   },
   {
     "Tetel": "Művészfilc display, City / 8db",
@@ -139,9 +139,9 @@
     "Netto": "6673",
     "Brutto": "8474.71",
     "AfaOsszeg": "1801.71",
-    "Cikkszam": null,
+    "Cikkszam": "379280",
     "FaberMegnevezes": null,
-    "DisplayText": "Minipack Mi-Teintes BT A4/10ív | "
+    "DisplayText": "Minipack Mi-Teintes BT A4/10ív | 379280"
   },
   {
     "Tetel": "Minipack Mi-Teintes CT A4/10ív",
@@ -163,9 +163,9 @@
     "Netto": "2614",
     "Brutto": "3319.78",
     "AfaOsszeg": "705.78",
-    "Cikkszam": null,
+    "Cikkszam": "114448",
     "FaberMegnevezes": null,
-    "DisplayText": "R.tömb GRAD Mix.Med. B A5/20ív | "
+    "DisplayText": "R.tömb GRAD Mix.Med. B A5/20ív | 114448"
   },
   {
     "Tetel": "Sp.tömb XL Kraft A4 / 60ív",
@@ -211,9 +211,9 @@
     "Netto": "1556.3",
     "Brutto": "1976.5",
     "AfaOsszeg": "420.2",
-    "Cikkszam": null,
+    "Cikkszam": "114413",
     "FaberMegnevezes": null,
-    "DisplayText": "Akvarellceruza klt - CE / 24db | "
+    "DisplayText": "Akvarellceruza klt - CE / 24db | 114413"
   },
   {
     "Tetel": "Akvarellceruza /24db fémdoboz",

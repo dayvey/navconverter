@@ -45,7 +45,7 @@ namespace navconverter
                 var lines = File.ReadAllLines(filepath).Skip(1);
                 foreach (var line in lines)
                 {
-                    var p = line.Split(';');
+                    var p = line.Split(";   ");
                     lista.Add(new AdoHivataliTetel
                     {
                         Cikkszam = p[0],
@@ -67,9 +67,10 @@ namespace navconverter
             {
                 for (int j = 0; j < adoLista.Count; j++) 
                 {
-                    if (lista[i].Tetel.ToString() == adoLista[j].Tetel.ToString())
+                    string name1 = lista[i].Tetel.ToString();
+                    string name2 = adoLista[j].Tetel.ToString();
+                    if (name1.Equals(name2))
                     {
-                        MessageBox.Show("NIGGER");
                         adoLista[j].Cikkszam = lista[i].Cikkszam;
                     }
                 }
@@ -133,7 +134,7 @@ namespace navconverter
 
             var lines = new List<string>
             {
-            string.Join(";", exportOszlopok) // fejléc
+            string.Join(";   ", exportOszlopok) // fejléc
             };
 
             foreach (var t in parositott)
@@ -149,7 +150,7 @@ namespace navconverter
                     t.AfaOsszeg,
                     t.Brutto
                 };
-                lines.Add(string.Join(";", row));
+                lines.Add(string.Join(";   ", row));
             }
 
             File.WriteAllLines(saveDialog.FileName, lines);
@@ -163,7 +164,7 @@ namespace navconverter
                 var lines2 = File.ReadAllLines(filepath).Skip(1);
                 foreach (var line in lines2)
                 {
-                    var p = line.Split(';');
+                    var p = line.Split(";   ");
                     lista.Add(new AdoHivataliTetel
                     {
                         Cikkszam = p[0].Trim(),
@@ -186,22 +187,25 @@ namespace navconverter
                     addition.Add(t);
                 }
 
-                for (int i = 0; i < lista.Count; i++)
+                for (int i = 0; i < parositott.Count; i++)
                 {
-                    string trimmed = (lista[i].Tetel).Trim();
-                    for (int j = 0; j < parositott.Count; j++)
+                    string trimmed = (parositott[i].Tetel).Trim();
+                    bool c = true;
+                    for (int j = 0; j < lista.Count; j++)
                     {
-                        string trimmed2 = (parositott[j].Tetel).Trim();
-                        if (trimmed != trimmed2)
-                        {
-                            addition.Add(parositott[j]);
-                        }
+                        string trimmed2 = (lista[j].Tetel).Trim();
+                        if (trimmed == trimmed2)
+                            c = false;
+                    }
+                    if (c)
+                    {
+                        addition.Add(parositott[i]);
                     }
                 }
 
                 var addedLines = new List<string>
                 {
-                string.Join(";", exportOszlopok) // fejléc
+                string.Join(";   ", exportOszlopok) // fejléc
                 };
 
 
@@ -218,7 +222,7 @@ namespace navconverter
                         t.AfaOsszeg,
                         t.Brutto
                     };
-                    addedLines.Add(string.Join(";", row));
+                    addedLines.Add(string.Join(";   ", row));
                 }
 
                 File.WriteAllLines(filepath, addedLines);
