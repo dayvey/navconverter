@@ -25,3 +25,4 @@ D:\Programming\repos\navconverter\navconverter\obj\Debug\net8.0-windows\refint\n
 D:\Programming\repos\navconverter\navconverter\obj\Debug\net8.0-windows\navconverter.pdb
 D:\Programming\repos\navconverter\navconverter\obj\Debug\net8.0-windows\navconverter.genruntimeconfig.cache
 D:\Programming\repos\navconverter\navconverter\obj\Debug\net8.0-windows\ref\navconverter.dll
+D:\Programming\repos\navconverter\navconverter\obj\Debug\net8.0-windows\navconverter.sourcelink.json

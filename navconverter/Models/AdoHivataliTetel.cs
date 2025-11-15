@@ -20,7 +20,6 @@ namespace navconverter.Models
         public string Cikkszam { get; set; } // ide kerül a faber cikkszám
         public string FaberMegnevezes { get; set; } // opcionális, ellenőrzéshez
 
-        public string DisplayText => $"{Tetel} | {Mennyiseg} db | {Egysegar} Ft | ÁFA: {Afa}" +
-                                     (string.IsNullOrEmpty(Cikkszam) ? "" : $" | {Cikkszam}");
+        public string DisplayText => $"{Tetel} | {Cikkszam}";
     }
 }

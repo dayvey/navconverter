@@ -7,6 +7,7 @@ namespace navconverter
 {
     public partial class Form1 : Form
     {
+        
         private List<AdoHivataliTetel> adoLista = new();
         private List<FaberTetel> faberLista = new();
         private const string ParositasFajl = "parositasok.json";
@@ -22,23 +23,62 @@ namespace navconverter
             "Brutto"
         };
 
+
         public Form1()
         {
             InitializeComponent();
             listBoxAdo.DrawMode = DrawMode.OwnerDrawFixed;
             listBoxAdo.DrawItem += ListBoxAdo_DrawItem;
+            listBoxFaber.DrawMode = DrawMode.OwnerDrawFixed;
+            listBoxFaber.DrawItem += ListBoxFaber_DrawItem;
             BetoltParositasok();
+
         }
 
         private void btnBetoltAdo_Click(object sender, EventArgs e)
         {
+            string corepath = Application.StartupPath;
+            string filepath = Path.Combine(corepath, "hello.csv");
+            var lista = new List<AdoHivataliTetel>();
+            if (File.Exists(filepath))
+            {
+                var lines = File.ReadAllLines(filepath).Skip(1);
+                foreach (var line in lines)
+                {
+                    var p = line.Split(';');
+                    lista.Add(new AdoHivataliTetel
+                    {
+                        Cikkszam = p[0],
+                        Tetel = p[1],
+                        Mennyiseg = p[2],
+                        Egysegar = p[3],
+                        Afa = p[4],
+                        AfaOsszeg = p[6],
+                        Netto = p[5],
+                        Brutto = p[7]
+                    });
+                }
+            }
             string path = FajltValaszt();
             if (string.IsNullOrEmpty(path)) return;
 
             adoLista = BeolvasAdoHivatal(path);
+            for (int i = 0; i < lista.Count; i++)
+            {
+                for (int j = 0; j < adoLista.Count; j++) 
+                {
+                    if (lista[i].Tetel.ToString() == adoLista[j].Tetel.ToString())
+                    {
+                        MessageBox.Show("NIGGER");
+                        adoLista[j].Cikkszam = lista[i].Cikkszam;
+                    }
+                }
+            }
+
             listBoxAdo.DataSource = null;
             listBoxAdo.DataSource = adoLista;
             listBoxAdo.DisplayMember = "Tetel";
+
         }
 
         private void btnBetoltFaber_Click(object sender, EventArgs e)
@@ -67,9 +107,12 @@ namespace navconverter
             // opcionálisan a faber megnevezést is elmentheted, ha szükséges
             ado.FaberMegnevezes = faber.Megnevezes;
 
+            faber.Chosen = 1;
+
             txtCikkszam.Text = faber.Cikkszam;
             MentesParositasok();
             listBoxAdo.Refresh();
+            listBoxFaber.Refresh();
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -90,7 +133,7 @@ namespace navconverter
 
             var lines = new List<string>
             {
-            string.Join(";  ", exportOszlopok) // fejléc
+            string.Join(";", exportOszlopok) // fejléc
             };
 
             foreach (var t in parositott)
@@ -106,10 +149,82 @@ namespace navconverter
                     t.AfaOsszeg,
                     t.Brutto
                 };
-                lines.Add(string.Join(";    ", row));
+                lines.Add(string.Join(";", row));
             }
 
             File.WriteAllLines(saveDialog.FileName, lines);
+
+            string corepath = Application.StartupPath;
+            string filepath = Path.Combine(corepath, "hello.csv");
+
+            var lista = new List<AdoHivataliTetel>();
+            if (File.Exists(filepath))
+            {
+                var lines2 = File.ReadAllLines(filepath).Skip(1);
+                foreach (var line in lines2)
+                {
+                    var p = line.Split(';');
+                    lista.Add(new AdoHivataliTetel
+                    {
+                        Cikkszam = p[0].Trim(),
+                        Tetel = p[1].Trim(),
+                        Mennyiseg = p[2].Trim(),
+                        Egysegar = p[3].Trim(),
+                        Afa = p[4].Trim(),
+                        AfaOsszeg = p[6].Trim(),
+                        Netto = p[5].Trim(),
+                        Brutto = p[7].Trim()
+                    });
+                }
+
+            }
+            if (File.Exists(filepath))
+            {
+                var addition = new List<AdoHivataliTetel>();
+                foreach (var t in lista)
+                {
+                    addition.Add(t);
+                }
+
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    string trimmed = (lista[i].Tetel).Trim();
+                    for (int j = 0; j < parositott.Count; j++)
+                    {
+                        string trimmed2 = (parositott[j].Tetel).Trim();
+                        if (trimmed != trimmed2)
+                        {
+                            addition.Add(parositott[j]);
+                        }
+                    }
+                }
+
+                var addedLines = new List<string>
+                {
+                string.Join(";", exportOszlopok) // fejléc
+                };
+
+
+                foreach (var t in addition)
+                {
+                    var row = new List<string>
+                    {
+                        t.Cikkszam,
+                        t.Tetel,
+                        t.Mennyiseg,
+                        t.Egysegar,
+                        t.Afa,
+                        t.Netto,
+                        t.AfaOsszeg,
+                        t.Brutto
+                    };
+                    addedLines.Add(string.Join(";", row));
+                }
+
+                File.WriteAllLines(filepath, addedLines);
+            }
+            else
+                File.WriteAllLines(filepath, lines);
             MessageBox.Show("Export kész!");
         }
 
@@ -119,6 +234,21 @@ namespace navconverter
             var item = (AdoHivataliTetel)listBoxAdo.Items[e.Index];
             e.Graphics.FillRectangle(new SolidBrush(
                 string.IsNullOrEmpty(item.Cikkszam) ? System.Drawing.Color.White : System.Drawing.Color.LightGreen), e.Bounds);
+            e.Graphics.DrawString(item.DisplayText, e.Font, System.Drawing.Brushes.Black, e.Bounds);
+        }
+
+        private void ListBoxFaber_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+            var item = (FaberTetel)listBoxFaber.Items[e.Index];
+            if (item.Chosen == 0)
+            {
+                e.Graphics.FillRectangle(new SolidBrush(System.Drawing.Color.White), e.Bounds);
+            }
+            else
+            {
+                e.Graphics.FillRectangle(new SolidBrush(System.Drawing.Color.LightGreen), e.Bounds);
+            }
             e.Graphics.DrawString(item.DisplayText, e.Font, System.Drawing.Brushes.Black, e.Bounds);
         }
 
@@ -159,23 +289,25 @@ namespace navconverter
             {
                 using var wb = new XLWorkbook(path);
                 var ws = wb.Worksheet(1);
-                foreach (var row in ws.RowsUsed().Skip(1))
+                int lastRow = ws.LastRowUsed().RowNumber();
+                for (int row = 1; row <= lastRow; row++)
                 {
-                        int egysegar = int.Parse(row.Cell(5).GetString());
-                        int db = int.Parse(row.Cell(3).GetString());
-                        int afa = int.Parse(row.Cell(7).GetString());
-                        int afaossz = (db * egysegar) * afa;
-                        int netto = db * egysegar;
+                    if (ws.Cell(row, 2).GetString() == "Megnevezés")
+                    {
+                        row += 1;
                         lista.Add(new AdoHivataliTetel
                         {
-                            Tetel = row.Cell(2).GetString(),
-                            Mennyiseg = row.Cell(3).GetString(),
-                            Egysegar = row.Cell(5).GetString(),
-                            Afa = row.Cell(7).GetString(),
-                            Netto = (egysegar * db).ToString(),
-                            AfaOsszeg = afaossz.ToString(),
-                            Brutto = (netto + afaossz).ToString()
+                            Tetel = ws.Cell(row, 2).GetString(),
+                            Mennyiseg = ws.Cell(row, 3).GetString(),
+                            Egysegar = ws.Cell(row, 5).GetString(),
+                            Afa = ws.Cell(row, 7).GetString(),
+                            AfaOsszeg = ws.Cell(row + 3, 2).GetString(),
+                            Netto = ws.Cell(row + 3, 1).GetString(),
+                            Brutto = ws.Cell(row + 3, 5).GetString()
+
                         });
+                        row += 17;
+                    }
                 }
             }
 
@@ -232,7 +364,7 @@ namespace navconverter
             }
         }
 
-        // --- Exportálás CSV-be ---
+        // --- Exportálás CSV-be --- //
         private static void ExportCsv(string filePath, List<AdoHivataliTetel> lista)
         {
             var lines = new List<string>
@@ -242,7 +374,7 @@ namespace navconverter
 
             foreach (var i in lista)
             {
-                lines.Add($"{i.Cikkszam};   {i.Tetel};  {i.Mennyiseg};  {i.Egysegar};   {i.Afa};    {i.Netto};  {i.Brutto}");
+                lines.Add($"{i.Cikkszam};   {i.Tetel};   {i.Mennyiseg};   {i.Egysegar};   {i.Afa};    {i.Netto};   {i.Brutto}");
             }
 
             File.WriteAllLines(filePath, lines);

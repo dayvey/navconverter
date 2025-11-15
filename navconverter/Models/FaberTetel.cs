@@ -11,6 +11,7 @@ namespace navconverter.Models
         public string Cikkszam { get; set; }
         public string Megnevezes { get; set; }
 
+        public int Chosen = 0;
         public string DisplayText => $"{Cikkszam} | {Megnevezes}";
     }
 }
