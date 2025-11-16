@@ -234,15 +234,19 @@ namespace navconverter
 
         private void ListBoxAdo_DrawItem(object sender, DrawItemEventArgs e)
         {
+            bool kivalasztott = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
             if (e.Index < 0) return;
             var item = (AdoHivataliTetel)listBoxAdo.Items[e.Index];
             e.Graphics.FillRectangle(new SolidBrush(
                 string.IsNullOrEmpty(item.Cikkszam) ? System.Drawing.Color.White : System.Drawing.Color.LightGreen), e.Bounds);
+            if (kivalasztott)
+                e.Graphics.FillRectangle(new SolidBrush(System.Drawing.Color.LightBlue), e.Bounds);
             e.Graphics.DrawString(item.DisplayText, e.Font, System.Drawing.Brushes.Black, e.Bounds);
         }
 
         private void ListBoxFaber_DrawItem(object sender, DrawItemEventArgs e)
         {
+            bool kivalasztott = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
             if (e.Index < 0) return;
             var item = (FaberTetel)listBoxFaber.Items[e.Index];
             if (item.Chosen == 0)
@@ -253,6 +257,8 @@ namespace navconverter
             {
                 e.Graphics.FillRectangle(new SolidBrush(System.Drawing.Color.LightGreen), e.Bounds);
             }
+            if (kivalasztott)
+                e.Graphics.FillRectangle(new SolidBrush(System.Drawing.Color.LightBlue), e.Bounds);
             e.Graphics.DrawString(item.DisplayText, e.Font, System.Drawing.Brushes.Black, e.Bounds);
         }
 

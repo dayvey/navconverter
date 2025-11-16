@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("navconverter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b2bad016088ab8914fffe34eda6ec62e79f8d897")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2075be3bc9706b1592438b19a06087e8ba16c025")]
 [assembly: System.Reflection.AssemblyProductAttribute("navconverter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("navconverter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
